@@ -1,11 +1,17 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import Image from 'next/image';
 
 export default function Home() {
+
+  const myDetails = {
+    name: 'Sachin Bahukhandi',
+    designation: 'Web Developer',
+  };
   return (
     <div className={styles.container}>
       <Head>
-        <title>Sachin Bahukhandi's Portfolio</title>
+        <title>{myDetails.name}'s Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
         {/* <link
           rel="shortcut icon"
@@ -13,117 +19,121 @@ export default function Home() {
           type="image/x-icon"
         /> */}
 
-        {/* <link rel="stylesheet" href="./assets/css/style.css" />
+        {/* <link rel="stylesheet" href="./assets/css/style.css" /> */}
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
           rel="stylesheet"
-        /> */}
+        />
       </Head>
-
       <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        {/* Sidebar */}
+        <aside className="sidebar" data-sidebar>
+          <div className="sidebar-info">
+            <figure className="avatar-box">
+              <Image src={"/images/avatar-1.png"}
+              width={80} height={140}
+              />
+            </figure>
 
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
+            <div className="info-content">
+              <h1 className="name" title="Sachin Bahukhandi">
+                {myDetails.name}
+              </h1>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+              <p className="title">{myDetails.designation}</p>
+            </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <button className="info_more-btn" data-sidebar-btn>
+              <span>Show Contacts</span>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+              <ion-icon name="chevron-down"></ion-icon>
+            </button>
+          </div>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+          <div className="sidebar-info_more">
+            <div className="separator"></div>
+
+            <ul className="contacts-list">
+              <li className="contact-item">
+                <div className="icon-box">
+                  <ion-icon name="mail-outline"></ion-icon>
+                </div>
+
+                <div className="contact-info">
+                  <p className="contact-title">Email</p>
+
+                  <a href="mailto:richard@example.com" className="contact-link">
+                    richard@example.com
+                  </a>
+                </div>
+              </li>
+
+              <li className="contact-item">
+                <div className="icon-box">
+                  <ion-icon name="phone-portrait-outline"></ion-icon>
+                </div>
+
+                <div className="contact-info">
+                  <p className="contact-title">Phone</p>
+
+                  <a href="tel:+12133522795" className="contact-link">
+                    +1 (213) 352-2795
+                  </a>
+                </div>
+              </li>
+
+              <li className="contact-item">
+                <div className="icon-box">
+                  <ion-icon name="calendar-outline"></ion-icon>
+                </div>
+
+                <div className="contact-info">
+                  <p className="contact-title">Birthday</p>
+
+                  <time datetime="1982-06-23">June 23, 1982</time>
+                </div>
+              </li>
+
+              <li className="contact-item">
+                <div className="icon-box">
+                  <ion-icon name="location-outline"></ion-icon>
+                </div>
+
+                <div className="contact-info">
+                  <p className="contact-title">Location</p>
+
+                  <address>Sacramento, California, USA</address>
+                </div>
+              </li>
+            </ul>
+
+            <div className="separator"></div>
+
+            <ul className="social-list">
+              <li className="social-item">
+                <a href="#" className="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li className="social-item">
+                <a href="#" className="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li className="social-item">
+                <a href="#" className="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
   );
 }
