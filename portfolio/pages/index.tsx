@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Sidebar from "../components/Sidebar";
 import { IDetails } from "../types/IDetails";
+import MainContent from "../components/MainContent";
 
 export default function Home() {
 
@@ -14,7 +15,7 @@ export default function Home() {
     location: "Dehradun, Uttarakhand, India"
   };
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>{myDetails.name}'s Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
@@ -30,6 +31,7 @@ export default function Home() {
       <main>
         {/* Sidebar */}
         <Sidebar userDetails={myDetails} />
+        <MainContent />
       </main>
     </div>
   );

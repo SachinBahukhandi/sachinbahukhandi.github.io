@@ -3,7 +3,7 @@ import React, { HTMLAttributes } from 'react';
 import { IDetails } from '../types/IDetails';
 
 type Props = {
-  userDetails: Details
+  userDetails: IDetails
 };
 const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
   return (
