@@ -3,6 +3,8 @@ import styles from "../styles/Home.module.css";
 import Sidebar from "../components/Sidebar";
 import { IDetails } from "../types/IDetails";
 import MainContent from "../components/MainContent";
+import CompleteComponent from "../components/CompleteComponent";
+import { INav } from "../types/INav";
 
 export default function Home() {
 
@@ -10,10 +12,27 @@ export default function Home() {
     name: 'Sachin Bahukhandi',
     designation: 'Web Developer',
     email: "sachinb0013@gmail.com",
-    phone:"8936985734",
-    dob:"01-23-1996",
+    phone: "8936985734",
+    dob: "01-23-1996",
     location: "Dehradun, Uttarakhand, India"
   };
+  const navItems: Array<INav> = [
+    {
+      name: "About",
+    },
+    {
+      name: "Resume",
+    },
+    {
+      name: "PortFolio",
+    },
+    {
+      name: "Blog",
+    },
+    {
+      name: "Contact",
+    }
+  ];
   return (
     <div>
       <Head>
@@ -29,10 +48,11 @@ export default function Home() {
         <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
       </Head>
       <main>
-        {/* Sidebar */}
+
         <Sidebar userDetails={myDetails} />
-        <MainContent />
+        <MainContent navItems={navItems} />
       </main>
+      {/* <CompleteComponent /> */}
     </div>
   );
 }
