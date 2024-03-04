@@ -14,7 +14,12 @@ export default function Home() {
     email: "sachinb0013@gmail.com",
     phone: "8936985734",
     dob: "01-23-1996",
-    location: "Dehradun, Uttarakhand, India"
+    location: "Dehradun, Uttarakhand, India",
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/in/sachin-bahukhandi/",
+      github: "https://github.com/SachinBahukhandi",
+      stackoverflow: "https://stackoverflow.com/users/5192105/sachin-bahukhandi"
+    }
   };
   const navItems: Array<INav> = [
     {
@@ -50,7 +55,7 @@ export default function Home() {
       <main>
 
         <Sidebar userDetails={myDetails} />
-        <MainContent navItems={navItems} />
+        {/* <MainContent navItems={navItems} /> */}
       </main>
       {/* <CompleteComponent /> */}
     </div>

@@ -1,6 +1,13 @@
 import Image from 'next/image';
 import React, { HTMLAttributes } from 'react';
 import { IDetails } from '../types/IDetails';
+import { FaChevronCircleDown } from "react-icons/fa";
+import { IoLogoGithub, IoLogoLinkedin, IoLogoStackoverflow, IoMailOutline } from "react-icons/io5";
+import { IoMdPhonePortrait } from "react-icons/io";
+import { CiCalendar } from "react-icons/ci";
+import { FaLocationDot } from "react-icons/fa6";
+import { CiLinkedin } from "react-icons/ci";
+import { FaGithub } from "react-icons/fa";
 
 type Props = {
   userDetails: IDetails
@@ -28,8 +35,8 @@ const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
 
         <button className="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
+          <FaChevronCircleDown />
+          {/* <ion-icon name="chevron-down"></ion-icon> */}
         </button>
       </div>
 
@@ -39,7 +46,8 @@ const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
         <ul className="contacts-list">
           <li className="contact-item">
             <div className="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+              <IoMailOutline />
+              {/* <ion-icon name="mail-outline"></ion-icon> */}
             </div>
 
             <div className="contact-info">
@@ -53,33 +61,36 @@ const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
 
           <li className="contact-item">
             <div className="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
+              <IoMdPhonePortrait />
+              {/* <ion-icon name="phone-portrait-outline"></ion-icon> */}
             </div>
 
             <div className="contact-info">
               <p className="contact-title">Phone</p>
 
-              <a href="tel:+12133522795" className="contact-link">
-               {userDetails.phone}
+              <a href={`tel:${userDetails.phone}`} className="contact-link">
+                {userDetails.phone}
               </a>
             </div>
           </li>
 
           <li className="contact-item">
             <div className="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
+              <CiCalendar />
+              {/* <ion-icon name="calendar-outline"></ion-icon> */}
             </div>
 
             <div className="contact-info">
-              <p className="contact-title">Birthday</p>
+              <p className="contact-title">DOB</p>
 
-              <time dateTime="1982-06-23">{userDetails.dob}</time>
+              <time dateTime={userDetails.dob}>{userDetails.dob}</time>
             </div>
           </li>
 
           <li className="contact-item">
             <div className="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
+              <FaLocationDot />
+              {/* <ion-icon name="location-outline"></ion-icon> */}
             </div>
 
             <div className="contact-info">
@@ -94,20 +105,23 @@ const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
 
         <ul className="social-list">
           <li className="social-item">
-            <a href="#" className="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a href={userDetails.socialLinks?.stackoverflow} className="social-link">
+              <IoLogoStackoverflow />
+              {/* <ion-icon name="logo-facebook"></ion-icon> */}
             </a>
           </li>
 
           <li className="social-item">
-            <a href="#" className="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
+            <a href={userDetails.socialLinks?.linkedin} className="social-link">
+              <IoLogoLinkedin />
+              {/* <ion-icon name="logo-twitter"></ion-icon> */}
             </a>
           </li>
 
           <li className="social-item">
-            <a href="#" className="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
+            <a href={userDetails.socialLinks?.github} className="social-link">
+              <IoLogoGithub />
+              {/* <ion-icon name="logo-instagram"></ion-icon> */}
             </a>
           </li>
         </ul>
