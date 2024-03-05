@@ -55,9 +55,8 @@ export default function Home() {
       <main>
 
         <Sidebar userDetails={myDetails} />
-        {/* <MainContent navItems={navItems} /> */}
+        <MainContent navItems={navItems} />
       </main>
-      {/* <CompleteComponent /> */}
     </div>
   );
 }
