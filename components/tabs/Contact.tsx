@@ -1,4 +1,4 @@
-import React from "react";
+timport React from "react";
 import { FaChevronCircleDown } from "react-icons/fa";
 import { IoEyeOutline, IoPaperPlane } from "react-icons/io5";
 
@@ -31,7 +31,6 @@ const Contact: React.FunctionComponent<Props> = ({ active }) => {
                                 name="fullname"
                                 className="form-input"
                                 placeholder="Full name"
-                                required=""
                                 data-form-input=""
                             />
                             <input
@@ -39,7 +38,6 @@ const Contact: React.FunctionComponent<Props> = ({ active }) => {
                                 name="email"
                                 className="form-input"
                                 placeholder="Email address"
-                                required=""
                                 data-form-input=""
                             />
                         </div>
@@ -47,14 +45,13 @@ const Contact: React.FunctionComponent<Props> = ({ active }) => {
                             name="message"
                             className="form-input"
                             placeholder="Your Message"
-                            required=""
                             data-form-input=""
                             defaultValue={""}
-                        />
+                        >
+                        </textarea>
                         <button
                             className="form-btn"
                             type="submit"
-                            disabled=""
                             data-form-btn=""
                         >
                             <IoPaperPlane/>
