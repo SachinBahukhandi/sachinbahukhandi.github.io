@@ -3,4 +3,5 @@ module.exports = {
     config.resolve.extensions.push(".ts", ".tsx");
     return config;
   },
+  output: 'export',
 };
