@@ -3,7 +3,6 @@ import styles from "../styles/Home.module.css";
 import Sidebar from "../components/Sidebar";
 import { IDetails } from "../types/IDetails";
 import MainContent from "../components/MainContent";
-import CompleteComponent from "../components/CompleteComponent";
 import { INav } from "../types/INav";
 
 export default function Home() {
