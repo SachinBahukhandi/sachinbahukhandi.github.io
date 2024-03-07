@@ -1,4 +1,4 @@
-timport React from "react";
+import React from "react";
 import { FaChevronCircleDown } from "react-icons/fa";
 import { IoEyeOutline, IoPaperPlane } from "react-icons/io5";
 
