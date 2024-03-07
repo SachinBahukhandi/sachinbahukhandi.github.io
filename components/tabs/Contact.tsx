@@ -1,6 +1,6 @@
 import React from "react";
 import { FaChevronCircleDown } from "react-icons/fa";
-import { IoEyeOutline } from "react-icons/io5";
+import { IoEyeOutline, IoPaperPlane } from "react-icons/io5";
 
 type Props = {
     active: boolean
@@ -57,7 +57,8 @@ const Contact: React.FunctionComponent<Props> = ({ active }) => {
                             disabled=""
                             data-form-btn=""
                         >
-                            <ion-icon name="paper-plane" />
+                            <IoPaperPlane/>
+                            {/* <ion-icon name="paper-plane" /> */}
                             <span>Send Message</span>
                         </button>
                     </form>
