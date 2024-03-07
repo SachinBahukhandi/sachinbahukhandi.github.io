@@ -11,7 +11,7 @@ const TabButtons: React.FunctionComponent<Props> = ({ navItems, activeTab, setAc
         <nav className="navbar">
             <ul className="navbar-list">
                 {navItems.map((navItem, index) => (
-                    <button className={`${index === activeTab && "active"} navbar-link`} data-nav-link="" onClick={() => setActiveTab(index)}>
+                    <button className={`${index === activeTab && "active"} navbar-link`} data-nav-link="" onClick={() => setActiveTab(index)} key={index}>
                         {navItem.name}
                     </button>
                 ))}

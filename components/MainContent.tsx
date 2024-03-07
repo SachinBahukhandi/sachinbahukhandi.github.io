@@ -9,14 +9,14 @@ type Props = {
 };
 
 const MainContent: React.FunctionComponent<Props> = ({ navItems }) => {
-    const [activeTab, setActiveTab] = useState<Number>(0);
+    const [activeTab, setActiveTab] = useState<number>(0);
     return (
         <div className="main-content">
             {/*
   - #NAVBAR
 */}
             <TabButtons navItems={navItems} activeTab={activeTab} setActiveTab={setActiveTab} />
-            <TabbedContent activeTab={activeTab} navItem={navItems[activeTab]} />
+            <TabbedContent activeTab={activeTab} navItem={navItems[activeTab].name} />
 
         </div>
     );

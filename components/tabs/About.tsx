@@ -6,7 +6,7 @@ type Props = {
 };
 const About: React.FunctionComponent<Props> = ({active}) => {
     return (
-        <article className={`about ${active} && "active"`} data-page="about">
+        <article className={`about ${active && "active"}`} data-page="about">
             <header>
                 <h2 className="h2 article-title">About me</h2>
             </header>
