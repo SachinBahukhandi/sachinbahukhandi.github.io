@@ -1,9 +1,10 @@
 import React from "react";
+import { IoBookOutline } from "react-icons/io5";
 
 type Props = {
     active: true
 };
-const Resume: React.FunctionComponent<Props> = ({active}) => {
+const Resume: React.FunctionComponent<Props> = ({ active }) => {
     console.log(active);
     return (
         <>
@@ -14,7 +15,7 @@ const Resume: React.FunctionComponent<Props> = ({active}) => {
                 <section className="timeline">
                     <div className="title-wrapper">
                         <div className="icon-box">
-                            <ion-icon name="book-outline" />
+                            <IoBookOutline />
                         </div>
                         <h3 className="h3">Education</h3>
                     </div>
@@ -52,7 +53,7 @@ const Resume: React.FunctionComponent<Props> = ({active}) => {
                 <section className="timeline">
                     <div className="title-wrapper">
                         <div className="icon-box">
-                            <ion-icon name="book-outline" />
+                            <IoBookOutline />
                         </div>
                         <h3 className="h3">Experience</h3>
                     </div>

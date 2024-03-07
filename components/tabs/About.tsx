@@ -1,6 +1,7 @@
 
 
 import React from "react";
+import { IoCloseOutline } from "react-icons/io5";
 type Props = {
     active: Boolean
 };
@@ -222,7 +223,7 @@ const About: React.FunctionComponent<Props> = ({active}) => {
                 <div className="overlay" data-overlay="" />
                 <section className="testimonials-modal">
                     <button className="modal-close-btn" data-modal-close-btn="">
-                        <ion-icon name="close-outline" />
+                        <IoCloseOutline />
                     </button>
                     <div className="modal-img-wrapper">
                         <figure className="modal-avatar-box">
