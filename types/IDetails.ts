@@ -9,8 +9,8 @@ export interface IDetails{
 }
 
 export interface SocialLinks{
-    linkedin: String,
-    stackoverflow: String,
-    github: String
+    linkedin: string,
+    stackoverflow: string,
+    github: string
 
 }
