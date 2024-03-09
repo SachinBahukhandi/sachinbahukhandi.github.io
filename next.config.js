@@ -3,8 +3,8 @@ module.exports = {
     config.resolve.extensions.push(".ts", ".tsx");
     return config;
   },
-  images: {
-    unoptimized: true,
-  },
-  output: "export",
+  // images: {
+  //   unoptimized: true,
+  // },
+  // output: "export",
 };
