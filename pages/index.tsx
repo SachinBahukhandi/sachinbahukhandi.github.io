@@ -69,7 +69,7 @@ export default function Home({
 
 export const getServerSideProps = (async () => {
   // Fetch data from external API
-  const res = await fetch('http://localhost:3000/api/sheets')
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/sheets`)
   const portfolioData: any = await res.json();
   // Pass data to the page via props
   return { props: { portfolioData } }
