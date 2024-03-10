@@ -2,29 +2,20 @@
 
 import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
+import { IAbout } from "../../types/IPortfolio";
+import IconComponent from "../IconComponent";
 type Props = {
-    active: Boolean
+    active: Boolean,
+    data: IAbout
 };
-const About: React.FunctionComponent<Props> = ({active}) => {
+const About: React.FunctionComponent<Props> = ({ active, data }) => {
     return (
         <article className={`about ${active && "active"}`} data-page="about">
             <header>
                 <h2 className="h2 article-title">About me</h2>
             </header>
             <section className="about-text">
-                <p>
-                    I'm Creative Director and UI/UX Designer from Sydney, Australia,
-                    working in web development and print media. I enjoy turning complex
-                    problems into simple, beautiful and intuitive designs.
-                </p>
-                <p>
-                    My job is to build your website so that it is functional and
-                    user-friendly but at the same time attractive. Moreover, I add
-                    personal touch to your product and make sure that is eye-catching and
-                    easy to use. My aim is to bring across your message and identity in
-                    the most creative way. I created web design for many famous brand
-                    companies.
-                </p>
+                {data.headline}
             </section>
             {/*
     - service
@@ -32,23 +23,23 @@ const About: React.FunctionComponent<Props> = ({active}) => {
             <section className="service">
                 <h3 className="h3 service-title">What i'm doing</h3>
                 <ul className="service-list">
-                    <li className="service-item">
-                        <div className="service-icon-box">
-                            <img
-                                src="images/icon-design.svg"
-                                alt="design icon"
-                                width={40}
-                            />
-                        </div>
-                        <div className="service-content-box">
-                            <h4 className="h4 service-item-title">Web design</h4>
-                            <p className="service-item-text">
-                                The most modern and high-quality design made at a professional
-                                level.
-                            </p>
-                        </div>
-                    </li>
-                    <li className="service-item">
+                    {
+                        data.stacks.map((stack, index) => (
+                            <li className="service-item" key={index}>
+                                <div className="service-icon-box">
+                                    <IconComponent icon={stack.icon} />
+                                </div>
+                                <div className="service-content-box">
+                                    <h4 className="h4 service-item-title">{stack.key}</h4>
+                                    <p className="service-item-text">
+                                        {stack.description}
+                                    </p>
+                                </div>
+                            </li>
+                        ))
+                    }
+
+                    {/* <li className="service-item">
                         <div className="service-icon-box">
                             <img
                                 src="images/icon-dev.svg"
@@ -93,7 +84,7 @@ const About: React.FunctionComponent<Props> = ({active}) => {
                                 level.
                             </p>
                         </div>
-                    </li>
+                    </li> */}
                 </ul>
             </section>
             {/*

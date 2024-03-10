@@ -1,3 +1,3 @@
 export interface INav{
-    name: String
+    name: string
 };

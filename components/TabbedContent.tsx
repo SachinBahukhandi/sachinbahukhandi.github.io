@@ -4,16 +4,18 @@ import Resume from "./tabs/Resume";
 import Portfolio from "./tabs/Portfolio";
 import Blog from "./tabs/Blog";
 import Contact from "./tabs/Contact";
+import { IPortfolio } from "../types/IPortfolio";
 type Props = {
     activeTab: Number,
-    navItem: String
+    navItem: string,
+    portfolioData: IPortfolio
 };
-const TabbedContent: React.FunctionComponent<Props> = ({ activeTab, navItem }) => {
+const TabbedContent: React.FunctionComponent<Props> = ({ activeTab, navItem, portfolioData }) => {
     navItem = navItem.toLowerCase();
     return (
         <>
             {
-                navItem == 'about' && <About active={true}/>
+                navItem == 'about' && <About active={true} data={portfolioData[navItem]}/>
                 ||
                 navItem == 'resume' && <Resume active={true}/>
                 ||

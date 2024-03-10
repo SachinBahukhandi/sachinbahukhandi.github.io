@@ -5,12 +5,12 @@ import { IDetails } from "../types/IDetails";
 import MainContent from "../components/MainContent";
 import { INav } from "../types/INav";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { IPortfolio } from "../types/IPortfolio";
 
 export default function Home({
-  repo,
+  portfolioData,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
-  console.log(repo);
   const myDetails: IDetails = {
     name: 'Sachin Bahukhandi',
     designation: 'Web Developer',
@@ -58,23 +58,20 @@ export default function Home({
       <main>
 
         <Sidebar userDetails={myDetails} />
-        <MainContent navItems={navItems} />
+        <MainContent navItems={navItems} portFolioData={portfolioData}/>
       </main>
     </div>
   );
 }
 
-type Repo = {
-  name: string
-  stargazers_count: number
-}
+
 
 
 export const getServerSideProps = (async () => {
   // Fetch data from external API
-  const res = await fetch('https://api.github.com/repos/vercel/next.js')
-  const repo: Repo = await res.json()
+  const res = await fetch('http://localhost:3000/api/sheets')
+  const portfolioData: any = await res.json();
   // Pass data to the page via props
-  return { props: { repo } }
-}) satisfies GetServerSideProps<{ repo: Repo }>
+  return { props: { portfolioData } }
+}) satisfies GetServerSideProps<{ portfolioData: IPortfolio }>
 
