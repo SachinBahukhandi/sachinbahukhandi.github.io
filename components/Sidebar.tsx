@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, useState } from 'react';
 import { IDetails } from '../types/IDetails';
 import { FaChevronCircleDown } from "react-icons/fa";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoStackoverflow, IoMailOutline } from "react-icons/io5";
@@ -13,8 +13,10 @@ type Props = {
   userDetails: IDetails
 };
 const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
+
+  const [active, setActive] = useState<boolean>(false);
   return (
-    <aside className="sidebar" data-sidebar>
+    <aside className={`sidebar`} data-sidebar>
       <div className="sidebar-info">
         <figure className="avatar-box">
           <Image
@@ -33,7 +35,7 @@ const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
           <p className="title">{userDetails.designation}</p>
         </div>
 
-        <button className="info_more-btn" data-sidebar-btn>
+        <button className="info_more-btn" data-sidebar-btn onClick={()=>{setActive(!active); console.log(active)}}>
           <span>Show Contacts</span>
           <FaChevronCircleDown />
           {/* <ion-icon name="chevron-down"></ion-icon> */}
