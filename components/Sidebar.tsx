@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { HTMLAttributes, useState } from 'react';
 import { IDetails } from '../types/IDetails';
-import { FaChevronCircleDown } from "react-icons/fa";
+import { FaChevronCircleDown, FaChevronCircleUp } from "react-icons/fa";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoStackoverflow, IoMailOutline } from "react-icons/io5";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { CiCalendar } from "react-icons/ci";
@@ -16,7 +16,7 @@ const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
 
   const [active, setActive] = useState<boolean>(false);
   return (
-    <aside className={`sidebar`} data-sidebar>
+    <aside className={`sidebar ${active? "active":""}`} data-sidebar>
       <div className="sidebar-info">
         <figure className="avatar-box">
           <Image
@@ -37,7 +37,10 @@ const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
 
         <button className="info_more-btn" data-sidebar-btn onClick={()=>{setActive(!active); console.log(active)}}>
           <span>Show Contacts</span>
-          <FaChevronCircleDown />
+          {
+            active ? <FaChevronCircleUp />: <FaChevronCircleDown />
+          }
+
           {/* <ion-icon name="chevron-down"></ion-icon> */}
         </button>
       </div>
