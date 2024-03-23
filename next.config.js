@@ -3,6 +3,16 @@ module.exports = {
     config.resolve.extensions.push(".ts", ".tsx");
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+        port: '',
+        pathname: '**',
+      },
+    ],
+  },
   // images: {
   //   unoptimized: true,
   // },

@@ -20,7 +20,7 @@ const Sidebar: React.FunctionComponent<Props> = ({ userDetails }) => {
       <div className="sidebar-info">
         <figure className="avatar-box">
           <Image
-            src={"/images/avatar-1.png"}
+            src={"https://www.gravatar.com/avatar/21e0b83b53c3f458373fbbb3c5e6921f?s=256&d=identicon&r=PG&f=y&so-version=2"}
             width={100}
             height={140}
             alt={userDetails.name}
