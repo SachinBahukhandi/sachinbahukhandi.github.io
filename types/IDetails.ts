@@ -5,7 +5,8 @@ export interface IDetails{
     phone: string;
     dob: string;
     location: string;
-    socialLinks?: SocialLinks
+    socialLinks?: SocialLinks,
+    profilePicture: string
 }
 
 export interface SocialLinks{

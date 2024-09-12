@@ -22,24 +22,25 @@ export default function Home({
       linkedin: "https://www.linkedin.com/in/sachin-bahukhandi/",
       github: "https://github.com/SachinBahukhandi",
       stackoverflow: "https://stackoverflow.com/users/5192105/sachin-bahukhandi"
-    }
+    },
+    profilePicture: "https://www.gravatar.com/avatar/21e0b83b53c3f458373fbbb3c5e6921f?s=256&d=identicon&r=PG&f=y&so-version=2"
   };
   const navItems: Array<INav> = [
     {
       name: "About",
-    },
-    {
-      name: "Resume",
-    },
-    {
-      name: "PortFolio",
-    },
-    {
-      name: "Blog",
-    },
-    {
-      name: "Contact",
     }
+    // {
+    //   name: "Resume",
+    // },
+    // {
+    //   name: "PortFolio",
+    // },
+    // {
+    //   name: "Blog",
+    // },
+    // {
+    //   name: "Contact",
+    // }
   ];
   return (
     <div>

@@ -90,7 +90,7 @@ const About: React.FunctionComponent<Props> = ({ active, data }) => {
             {/*
     - testimonials
   */}
-            <section className="testimonials">
+            {/* <section className="testimonials">
                 <h3 className="h3 testimonials-title">Testimonials</h3>
                 <ul className="testimonials-list has-scrollbar">
                     <li className="testimonials-item">
@@ -206,7 +206,7 @@ const About: React.FunctionComponent<Props> = ({ active, data }) => {
                         </div>
                     </li>
                 </ul>
-            </section>
+            </section> */}
             {/*
     - testimonials modal
   */}
@@ -247,8 +247,8 @@ const About: React.FunctionComponent<Props> = ({ active, data }) => {
             {/*
     - clients
   */}
-            <section className="clients">
-                <h3 className="h3 clients-title">Clients</h3>
+            {/* <section className="clients">
+                <h3 className="h3 clients-title">Projects</h3>
                 <ul className="clients-list has-scrollbar">
                     <li className="clients-item">
                         <a href="#">
@@ -281,7 +281,7 @@ const About: React.FunctionComponent<Props> = ({ active, data }) => {
                         </a>
                     </li>
                 </ul>
-            </section>
+            </section> */}
         </article>
     );
 };
